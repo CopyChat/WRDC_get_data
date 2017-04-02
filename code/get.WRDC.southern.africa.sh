@@ -98,14 +98,14 @@ function check()
 
 #get_link 
 
-# start to download
 #get_info
 
 # download using get.WRDC.data.py
-# NOTE: output file name : line number is the line of link.country_station_year
-#python ./get.WRDC.data.py >> download.log
+#python ./get.WRDC.data.py >> download.log ( off line, use current script only )
 
+# start to download
 getdata
+# NOTE: output file name : line number is the line of link.country_station_year
 
 # check if all are downloaded
 #check
