@@ -1,6 +1,10 @@
 
 # The WRDC data quality flags
 
+    * data are stored in dir : Southern.Afria/
+    * line number in the file name is coorespending to the line mumber of
+    file link.country_station_year, which is in the same dir.
+
 ## In database In bulletins    Description
    0                           Good value
    1           )               Questionable value  as estimated at  National Meteorological Service
