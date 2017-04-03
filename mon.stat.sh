@@ -78,7 +78,7 @@ function SpatialInfo()
         year=$(echo $file | awk -F "." '{print $4}')
 
         lat=$(awk 'NR==9'  $file | grep -o '[0-9]\+')
-        lat=$(echo $lat | awk '{print $1+$2/60}')
+        lat=$(echo $lat | awk '{print (-1)*($1+$2/60)}')
 
         lon=$(awk 'NR==11' $file | grep -o '[0-9]\+')
         lon=$(echo $lon | awk '{print $1+$2/60}')
