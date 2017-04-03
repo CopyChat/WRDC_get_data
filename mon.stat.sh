@@ -26,7 +26,7 @@ prefix=WRDC
 Tline=1412                                      # total line number
 MONTH=(JAN FEB MAR APR MAR JUN JUL AUG SEP OCT NOV DEC)    # from 0
 list=link.country_station_year                  # list of file
-DIR=/Users/ctang/climate/GLOBALDATA/OBSDATA/WRDC/Southern.Afria
+DIR=/Users/ctang/climate/GLOBALDATA/OBSDATA/WRDC/Southern.Africa
 
 
 #---  FUNCTION  ----------------------------------------------------------------
@@ -56,8 +56,6 @@ function MonMeanFlag()
     echo ""
 }
 
-
-
 #---  FUNCTION  ----------------------------------------------------------------
 #          NAME:  SpatialInfo
 #   DESCRIPTION:  get spation info
@@ -67,11 +65,13 @@ function MonMeanFlag()
 function SpatialInfo()
 {
     output=$1
+    cd $DIR
     rm -rf $output 2>&1
 
-    cd $DIR
     for line in $(seq -s " " 1 $Tline)
     do
+        echo ----------- $line / $Tline
+
         file=$(ls $prefix.*.*.*.line_$line.csv)
         country=$(echo $file | awk -F "." '{print $2}')
         station=$(echo $file | awk -F "." '{print $3}')
@@ -90,24 +90,13 @@ function SpatialInfo()
         MonMeanFlag $file >> $output
 
         # running log
-        echo ----------- $line / $Tline
 
     done
 }
 
 SpatialInfo flag.MonMean
+cp $DIR/flag.MonMean /Users/ctang/climate/GLOBALDATA/OBSDATA/WRDC/
+
 exit
 
-#---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  monData
-#   DESCRIPTION:  get monthly data
-#    PARAMETERS:  file_name_(country,year) mumber_of_month.
-#       RETURNS:  monthly data value
-#-------------------------------------------------------------------------------
-function monData()
-{
-    echo jj
-}
-
-monData 1983 1
 
