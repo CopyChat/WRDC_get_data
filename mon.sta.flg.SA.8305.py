@@ -120,13 +120,13 @@ print "NO-ZERO,sattion: ",np.count_nonzero(mon_count)
 
 title='WRDC monthly RSDS obs in southern Africa 1983-2005 ('+\
         str(np.count_nonzero(mon_count))+' out of 110 WRDC stations)'
-fig.suptitle(title,fontsize=12)
+# fig.suptitle(title,fontsize=12)
 
 # plot record num of each station
 for sta in range(len(station_uniq)):
-    print "ploting",sta
+    print "plotting: ",sta
     if mon_count[sta] > 0 and mon_count[sta] < 12:
-        plt.annotate( int(mon_count[sta]),xy=(lon_uniq[sta],lat_uniq[sta]),ytext=(-15, 15),\
+        plt.annotate( int(mon_count[sta]),xy=(lon_uniq[sta], lat_uniq[sta]), xytext=(-15, 15),\
             textcoords='offset points', ha='right', va='bottom',color='blue',\
             # bbox=dict(boxstyle='round,pad=0.5', fc='yellow', alpha=0.5),\
             arrowprops=dict(arrowstyle = '->', connectionstyle='arc3,rad=0'))
@@ -134,7 +134,7 @@ for sta in range(len(station_uniq)):
 plt.savefig('mon.flg.sta.SA.8305.eps',format='eps')
 #=================================================== 
 print "done"
-plt.show()
+# plt.show()
 
 quit()
 
