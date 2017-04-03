@@ -95,7 +95,7 @@ function SpatialInfo()
 }
 
 SpatialInfo flag.MonMean
-cp $DIR/flag.MonMean /Users/ctang/climate/GLOBALDATA/OBSDATA/WRDC/
+space.sh $DIR/flag.MonMean > /Users/ctang/climate/GLOBALDATA/OBSDATA/WRDC/flag.MonMean
 
 exit
 
