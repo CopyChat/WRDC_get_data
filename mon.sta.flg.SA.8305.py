@@ -48,6 +48,7 @@ mon_count_year = np.zeros((len(station_id)))
 for i in range(len(station_id)):
     k=0
     for j in range(12):
+
         if int(month12[i,j]) == 0:
             k = k + 1
     mon_count_year[i] = k
@@ -133,6 +134,7 @@ for sta in range(len(station_uniq)):
 
 plt.savefig('mon.flg.sta.SA.8305.eps',format='eps')
 #=================================================== 
+
 print "done"
 # plt.show()
 
